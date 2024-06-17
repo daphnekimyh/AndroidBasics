@@ -1,5 +1,12 @@
 package com.example.kotlinbasics
 
+data class coffeeDetails(
+    val sugarCount: Int,
+    val name: String,
+    val size: String,
+    val creamAmount: Int
+)
+
 fun main(){
 
 //    var myAge : Long = 35
@@ -79,13 +86,29 @@ fun main(){
 //
 //    makeCoffee(sugarCount, name)
 
-    println("Enter number 1")
-    val num1 = readln().toInt()
-    println("Enter number 2")
-    val num2 = readln().toInt()
+//    println("Enter number 1")
+//    val num1 = readln().toDouble()
+//    println("Enter number 2")
+//    val num2 = readln().toDouble()
+//
+//    // val myResult = add(num1, num2)
+//    val myResult = devide(num1, num2)
+//    println("The result is $myResult")
 
-    val myResult = add(num1, num2)
-    println("The result is $myResult")
+    // Creating an Object/instance of the class Dog
+//    var daisy = Dog("Daisy", "Dwarf poodle", 1)
+//    println("${daisy.name} is a ${daisy.breed} and is ${daisy.age} years old")
+//    daisy.age = 2
+//    println("A year has passed")
+//    println("${daisy.name} is a ${daisy.breed} and is ${daisy.age} years old")
+
+
+    val coffeeForDenis = coffeeDetails(3, "Denis", "Venti", 2)
+    makeCoffee(coffeeForDenis)
+}
+
+fun devide(num1 : Double, num2: Double): Double{
+    return num1 / num2
 }
 
 fun add(num1: Int, num2: Int): Int {
@@ -98,17 +121,20 @@ fun askCoffeeDetails(){
     println("How many pieces of sugar do you want?")
     val sugarCount = readln().toInt()
 
-    makeCoffee(sugarCount, name)
+    // makeCoffee(sugarCount, name)
 }
 
 // Define Function
-fun makeCoffee(sugarCount : Int, name: String){
-    if(sugarCount == 1){
-        println("Coffee with $sugarCount spoon of sugar for $name")
-    }else if(sugarCount == 0){
-        println("Coffee with no sugar for $name")
+fun makeCoffee(coffeeDetails: coffeeDetails){
+    if(coffeeDetails.sugarCount == 1){
+        println("Coffee with ${coffeeDetails.sugarCount} spoon of sugar " +
+                "for ${coffeeDetails.name} + and cream : ${coffeeDetails.creamAmount}")
+    }else if(coffeeDetails.sugarCount == 0){
+        println("Coffee with no sugar for ${coffeeDetails.name}" +
+                "+ and cream : ${coffeeDetails.creamAmount}")
     }else{
-        println("Coffee with $sugarCount spoons of sugar for $name")
+        println("Coffee with ${coffeeDetails.sugarCount} spoons of sugar " +
+                "for ${coffeeDetails.name} + and cream : ${coffeeDetails.creamAmount}")
     }
 
 
