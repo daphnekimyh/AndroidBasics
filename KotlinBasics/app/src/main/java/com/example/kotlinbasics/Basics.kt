@@ -72,10 +72,12 @@ fun main(){
 //    }
 //    println("Loop is done!")
     // Call Function
-    makeCoffee(0, "Jenny")
-    makeCoffee(1, "Jimmy")
-    makeCoffee(2, "Amy")
-    makeCoffee(30, "Clair")
+    println("Who is this coffee for?")
+    val name = readln()
+    println("How many pieces of sugar do you want?")
+    val sugarCount = readln().toInt()
+
+    makeCoffee(sugarCount, name)
 }
 
 // Define Function
