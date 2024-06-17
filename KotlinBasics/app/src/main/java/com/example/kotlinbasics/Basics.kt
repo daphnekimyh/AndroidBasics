@@ -72,6 +72,27 @@ fun main(){
 //    }
 //    println("Loop is done!")
     // Call Function
+//    println("Who is this coffee for?")
+//    val name = readln()
+//    println("How many pieces of sugar do you want?")
+//    val sugarCount = readln().toInt()
+//
+//    makeCoffee(sugarCount, name)
+
+    println("Enter number 1")
+    val num1 = readln().toInt()
+    println("Enter number 2")
+    val num2 = readln().toInt()
+
+    val myResult = add(num1, num2)
+    println("The result is $myResult")
+}
+
+fun add(num1: Int, num2: Int): Int {
+    return num1 + num2
+}
+
+fun askCoffeeDetails(){
     println("Who is this coffee for?")
     val name = readln()
     println("How many pieces of sugar do you want?")
@@ -89,5 +110,6 @@ fun makeCoffee(sugarCount : Int, name: String){
     }else{
         println("Coffee with $sugarCount spoons of sugar for $name")
     }
+
 
 }
