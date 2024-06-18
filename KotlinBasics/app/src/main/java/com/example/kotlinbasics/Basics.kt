@@ -1,12 +1,5 @@
 package com.example.kotlinbasics
 
-data class coffeeDetails(
-    val sugarCount: Int,
-    val name: String,
-    val size: String,
-    val creamAmount: Int
-)
-
 fun main(){
 
 //    var myAge : Long = 35
@@ -103,9 +96,54 @@ fun main(){
 //    println("${daisy.name} is a ${daisy.breed} and is ${daisy.age} years old")
 
 
-    val coffeeForDenis = coffeeDetails(3, "Denis", "Venti", 2)
-    makeCoffee(coffeeForDenis)
+//    val coffeeForDenis = coffeeDetails(3, "Denis", "Venti", 2)
+//    makeCoffee(coffeeForDenis)
+
+    // Immutable list - you cannot add items after the initialization
+    // val shoppingList = listOf("Processor", "RAM", "Graphics Card", "SSD")
+    // mutable list - you can add items later and modify
+    val shoppingList = mutableListOf("Processor", "RAM", "Graphics Card RTX 3060", "SSD")
+
+    // adding items to lists
+    shoppingList.add("Cooling system")
+    println(shoppingList)
+    shoppingList.remove("Graphics Card RTX 3060")
+    println(shoppingList)
+    shoppingList.add("Graphics Card RTX 4090")
+    println(shoppingList)
+    shoppingList.removeAt(2)
+    println(shoppingList)
+    shoppingList.removeAt(1)
+    println(shoppingList)
+    shoppingList.add(2, "RAM")
+    println(shoppingList)
+    println(shoppingList[2])
+
+    shoppingList[3] = "Graphics Card RX 7800XT"
+    println(shoppingList)
+    shoppingList.set(1, "Water Cooling")
+    println(shoppingList)
+    val hasRam = shoppingList.contains("RAM")
+    println(hasRam)
+
+    for(item in shoppingList){
+        println(item)
+        if(item == "RAM"){
+            shoppingList.removeLast()
+            break
+        }
+    }
+    println(shoppingList)
+
 }
+
+/*
+data class coffeeDetails(
+    val sugarCount: Int,
+    val name: String,
+    val size: String,
+    val creamAmount: Int
+)
 
 fun devide(num1 : Double, num2: Double): Double{
     return num1 / num2
@@ -139,3 +177,5 @@ fun makeCoffee(coffeeDetails: coffeeDetails){
 
 
 }
+
+ */
