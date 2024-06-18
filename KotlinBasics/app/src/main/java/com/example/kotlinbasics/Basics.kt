@@ -126,13 +126,18 @@ fun main(){
     val hasRam = shoppingList.contains("RAM")
     println(hasRam)
 
-    for(item in shoppingList){
-        println(item)
-        if(item == "RAM"){
-            shoppingList.removeLast()
-            break
-        }
+//    for(item in shoppingList){
+//        println(item)
+//        if(item == "RAM"){
+//            shoppingList.removeLast()
+//            break
+//        }
+//    }
+
+    for(index in 0 until shoppingList.size){
+        println("item ${shoppingList[index]} is at index $index")
     }
+
     println(shoppingList)
 
 }
